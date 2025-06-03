@@ -1,0 +1,3 @@
+<app-author-list [author]="authorResource.value()?.items ?? []" [errorMessage]="authorResource.error()"
+  [isLoading]="authorResource.isLoading()" [isEmpty]="authorResource.value.length === 0">
+</app-author-list>

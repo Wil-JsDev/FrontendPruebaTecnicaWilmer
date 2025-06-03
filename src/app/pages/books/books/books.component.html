@@ -1,0 +1,5 @@
+<app-book-list [books]="booksResource.value()?.items ?? []" [errorMessage]="booksResource.error()"
+  [isLoading]="booksResource.isLoading()" [isEmpty]="booksResource.value.length === 0">
+</app-book-list>
+
+<router-outlet></router-outlet>

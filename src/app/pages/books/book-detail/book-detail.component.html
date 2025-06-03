@@ -1,0 +1,23 @@
+<div class="overflow-x-auto">
+  <table class="table">
+    <!-- head -->
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Titulo</th>
+        <th>Descripcion</th>
+        <th>Experto</th>
+        <th>Fecha de publicacion</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- row 1 -->
+      <tr>
+        <th>{{ bookResource.value()?.id }}</th>
+        <th>{{ bookResource.value()?.description }}</th>
+        <th>{{ bookResource.value()?.excerpt }}</th>
+        <th>{{ bookResource.value()?.publishDate }}</th>
+      </tr>
+    </tbody>
+  </table>
+</div>

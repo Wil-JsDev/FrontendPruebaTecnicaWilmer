@@ -1,0 +1,62 @@
+<form class="max-w-2xl mx-auto bg-base-200 p-6 rounded-box shadow-md space-y-4" (ngSubmit)="createBook()"
+  [formGroup]="createForm">
+  <h2 class="text-2xl font-bold text-center mb-4">Registrar Libro</h2>
+
+  <div class="form-control">
+    <label class="label">
+      <span class="label-text">Título</span>
+    </label>
+    <input type="text" placeholder="Título del libro" class="input input-bordered" name="title" required
+      formControlName="title" />
+    @if (formUtils.isValidField(createForm,'title')) {
+    <span class="form-text text-danger">
+      {{formUtils.getFieldError(createForm,'title')}}
+    </span>
+    }
+  </div>
+
+  <div class="form-control">
+    <label class="label">
+      <span class="label-text">Descripción</span>
+    </label>
+
+    <input placeholder="Descripción del libro" class="textarea textarea-bordered" name="description" required
+      formControlName="description" />
+    @if (formUtils.isValidField(createForm,'description')) {
+    <span class="form-text text-danger">
+      {{formUtils.getFieldError(createForm,'description')}}
+    </span>
+    }
+  </div>
+
+  <div class="form-control">
+    <label class="label">
+      <span class="label-text">Experto</span>
+    </label>
+    <input type="text" placeholder="Experto" class="input input-bordered" formControlName="excerpt" required />
+    @if (formUtils.isValidField(createForm,'excerpt')) {
+    <span class="form-text text-danger">
+      {{formUtils.getFieldError(createForm,'excerpt')}}
+    </span>
+    }
+  </div>
+
+  <div class="form-control">
+    <label class="label">
+      <span class="label-text">Fecha de publicacion</span>
+    </label>
+    <input type="date" placeholder="Fecha de publicacion" class="input input-bordered" required
+      formControlName="publishDate" />
+
+    @if (formUtils.isValidField(createForm,'publishDate')) {
+    <span class="form-text text-danger">
+      {{formUtils.getFieldError(createForm,'publishDate')}}
+    </span>
+    }
+  </div>
+
+  <div class="form-control mt-6">
+    <button type="submit" class="btn btn-primary w-full">Guardar Libro</button>
+  </div>
+
+</form>

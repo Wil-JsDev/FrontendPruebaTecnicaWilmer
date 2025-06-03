@@ -1,0 +1,48 @@
+<form class="max-w-2xl mx-auto bg-base-200 p-6 rounded-box shadow-md space-y-4" (ngSubmit)="updateAuthor()"
+  [formGroup]="updateForm">
+  <h2 class="text-2xl font-bold text-center mb-4">Actualizar autor</h2>
+
+  <div class="form-control">
+    <label class="label">
+      <span class="label-text">Id del libro</span>
+    </label>
+    <input type="text" placeholder="Codigo del libro" class="input input-bordered" name="idBook" required
+      formControlName="idBook" />
+    @if (formUtils.isValidField(updateForm,'idBook')) {
+    <span class="form-text text-danger">
+      {{formUtils.getFieldError(updateForm,'idBook')}}
+    </span>
+    }
+  </div>
+
+  <div class="form-control">
+    <label class="label">
+      <span class="label-text">Nombre</span>
+    </label>
+
+    <input placeholder="Nombre del autor" class="textarea textarea-bordered" name="description" required
+      formControlName="firstName" />
+    @if (formUtils.isValidField(updateForm,'firstName')) {
+    <span class="form-text text-danger">
+      {{formUtils.getFieldError(updateForm,'firstName')}}
+    </span>
+    }
+  </div>
+
+  <div class="form-control">
+    <label class="label">
+      <span class="label-text">Apellido</span>
+    </label>
+    <input type="text" placeholder="lastName" class="input input-bordered" formControlName="lastName" required />
+    @if (formUtils.isValidField(updateForm,'lastName')) {
+    <span class="form-text text-danger">
+      {{formUtils.getFieldError(updateForm,'lastName')}}
+    </span>
+    }
+  </div>
+
+  <div class="form-control mt-6">
+    <button type="submit" class="btn btn-primary w-full">Actualizar Author</button>
+  </div>
+
+</form>
